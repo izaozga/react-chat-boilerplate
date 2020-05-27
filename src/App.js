@@ -1,7 +1,4 @@
 import React from "react";
-import "./App.css";
-import Profile from "./pages/Profile";
-import ChatContainer from "./pages/ChatContainer";
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,6 +6,11 @@ import {
   Redirect,
 } from "react-router-dom";
 import { LanguageContext } from "./LanguageContext";
+import Profile from "./pages/Profile";
+import ChatContainer from "./pages/ChatContainer";
+import Counter from "./pages/Counter";
+
+import "./App.css";
 
 class App extends React.Component {
   state = {
@@ -42,6 +44,7 @@ class App extends React.Component {
               </Route>
             </Switch>
           </Router>
+          <Counter />
         </div>
       </LanguageContext.Provider>
     );
