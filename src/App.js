@@ -9,6 +9,7 @@ import { LanguageContext } from "./LanguageContext";
 import Profile from "./pages/Profile";
 import ChatContainer from "./pages/ChatContainer";
 import Counter from "./pages/Counter";
+import LifecycleMethods from "./pages/LifecycleMethods";
 
 import "./App.css";
 
@@ -45,6 +46,7 @@ class App extends React.Component {
             </Switch>
           </Router>
           <Counter />
+          <LifecycleMethods />
         </div>
       </LanguageContext.Provider>
     );
