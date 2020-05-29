@@ -11,6 +11,7 @@ import ChatContainer from "./pages/ChatContainer";
 import Counter from "./pages/Counter";
 import LifecycleMethods from "./pages/LifecycleMethods";
 import Navbar from "./pages/Navbar";
+import Page404 from "./pages/Page404";
 
 import "./App.css";
 
@@ -54,7 +55,7 @@ class App extends React.Component {
                   <LifecycleMethods />
                 </Route>
                 <Route path="*">
-                  <div>404 Page</div>
+                  <Page404 />
                 </Route>
               </Switch>
             </div>
