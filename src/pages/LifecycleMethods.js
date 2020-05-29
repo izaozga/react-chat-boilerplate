@@ -20,6 +20,12 @@ class LifecycleMethods extends React.Component {
     );
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log(prevProps);
+    console.log(prevState);
+    console.log(snapshot);
+  }
+
   componentWillUnmount() {
     window.removeEventListener("resize", this.resizeListener);
   }
