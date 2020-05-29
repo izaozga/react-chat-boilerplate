@@ -4,7 +4,7 @@ import { LanguageContext } from "../LanguageContext";
 
 class Profile extends React.Component {
   render() {
-    const routeName = this.context === "pl" ? "Czat" : "Chat";
+    const routeName = this.context.language === "pl" ? "Czat" : "Chat";
     return (
       <div>
         <h1>Profile</h1>

@@ -6,7 +6,7 @@ class LifecycleMethods extends React.Component {
     this.state = {
       width: 0,
     };
-    // this.onResizeHandler = this.onResizeHandler.bind(this);
+    this.onResizeHandler = this.onResizeHandler.bind(this);
   }
 
   onResizeHandler(e) {
@@ -20,10 +20,9 @@ class LifecycleMethods extends React.Component {
     );
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate(prevProps, prevState) {
     console.log(prevProps);
     console.log(prevState);
-    console.log(snapshot);
   }
 
   componentWillUnmount() {
