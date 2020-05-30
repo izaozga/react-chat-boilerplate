@@ -12,6 +12,7 @@ import Counter from "./pages/Counter";
 import LifecycleMethods from "./pages/LifecycleMethods";
 import Navbar from "./pages/Navbar";
 import Page404 from "./pages/Page404";
+import ErrorCss from "./pages/ErrorCss";
 
 import "./App.css";
 
@@ -53,6 +54,9 @@ class App extends React.Component {
                 </Route>
                 <Route path="/lifecycle-methods">
                   <LifecycleMethods />
+                </Route>
+                <Route path="/error-css">
+                  <ErrorCss />
                 </Route>
                 <Route path="*">
                   <Page404 />

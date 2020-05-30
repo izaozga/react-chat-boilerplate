@@ -19,6 +19,9 @@ class Navbar extends React.Component {
           <li>
             <NavLink to="/lifecycle-methods">Lifecycle Methods</NavLink>
           </li>
+          <li>
+            <NavLink to="/error-css">CSS Example</NavLink>
+          </li>
           <li style={{ float: "right" }}>
             <button onClick={this.context.changeLanguage}>
               Switch Language
