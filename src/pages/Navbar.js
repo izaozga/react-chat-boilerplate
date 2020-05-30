@@ -25,6 +25,9 @@ class Navbar extends React.Component {
           <li>
             <NavLink to="/hooks-interval">Hooks interval</NavLink>
           </li>
+          <li>
+            <NavLink to="/weather-api">Weather API</NavLink>
+          </li>
           <li style={{ float: "right" }}>
             <button onClick={this.context.changeLanguage}>
               Switch Language

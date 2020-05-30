@@ -14,6 +14,7 @@ import Navbar from "./pages/Navbar";
 import Page404 from "./pages/Page404";
 import ErrorCss from "./pages/ErrorCss";
 import HooksInterval from "./pages/HooksInterval";
+import Weather from "./pages/Weather";
 
 import "./App.css";
 
@@ -61,6 +62,9 @@ class App extends React.Component {
                 </Route>
                 <Route path="/hooks-interval">
                   <HooksInterval />
+                </Route>
+                <Route path="/weather-api">
+                  <Weather />
                 </Route>
                 <Route path="*">
                   <Page404 />
