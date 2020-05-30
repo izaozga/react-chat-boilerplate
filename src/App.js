@@ -13,6 +13,7 @@ import LifecycleMethods from "./pages/LifecycleMethods";
 import Navbar from "./pages/Navbar";
 import Page404 from "./pages/Page404";
 import ErrorCss from "./pages/ErrorCss";
+import HooksInterval from "./pages/HooksInterval";
 
 import "./App.css";
 
@@ -57,6 +58,9 @@ class App extends React.Component {
                 </Route>
                 <Route path="/error-css">
                   <ErrorCss />
+                </Route>
+                <Route path="/hooks-interval">
+                  <HooksInterval />
                 </Route>
                 <Route path="*">
                   <Page404 />

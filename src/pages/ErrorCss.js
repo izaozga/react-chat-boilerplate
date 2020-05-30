@@ -10,17 +10,19 @@ class ErrorCss extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.mouseEventListener = window.addEventListener("mousemove", (e) => {
-      this.setState({
-        mouseX: e.offsetX,
-        mouseY: e.offsetY,
-      });
+  mouseMoveHandler = (e) => {
+    this.setState({
+      mouseX: e.offsetX,
+      mouseY: e.offsetY,
     });
+  };
+
+  componentDidMount() {
+    window.addEventListener("mousemove", this.mouseMoveHandler);
   }
 
   componentWillUnmount() {
-    window.removeEventListener(this.mouseEventListener);
+    window.removeEventListener("mousemove", this.mouseMoveHandler);
   }
 
   render() {
