@@ -15,6 +15,7 @@ import Page404 from "./pages/Page404";
 import ErrorCss from "./pages/ErrorCss";
 import HooksInterval from "./pages/HooksInterval";
 import Weather from "./pages/Weather";
+import DomRef from "./pages/DomRef";
 
 import "./App.css";
 
@@ -65,6 +66,9 @@ class App extends React.Component {
                 </Route>
                 <Route path="/weather-api">
                   <Weather />
+                </Route>
+                <Route path="/dom-ref">
+                  <DomRef />
                 </Route>
                 <Route path="*">
                   <Page404 />
