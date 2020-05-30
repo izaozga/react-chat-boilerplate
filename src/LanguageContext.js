@@ -1,3 +1,6 @@
 import React from "react";
 
-export const LanguageContext = React.createContext("pl");
+export const LanguageContext = React.createContext({
+  language: "pl",
+  changeLanguage: () => {},
+});
