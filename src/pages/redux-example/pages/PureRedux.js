@@ -58,7 +58,7 @@ const PureRedux = () => {
     // });
 
     // manual
-    // store.dispatch(createAddAction(3));
+    // store.dispatch(addAction(3));
 
     // using bindActionCreators
     dispatchAdd(4);
@@ -125,7 +125,7 @@ const store = createStore(
 );
 
 // bindActionCreators
-const createAddAction = (step) => {
+const addAction = (step) => {
   return {
     type: "INCREASE",
     payload: {
@@ -134,4 +134,4 @@ const createAddAction = (step) => {
   };
 };
 
-const dispatchAdd = bindActionCreators(createAddAction, store.dispatch);
+const dispatchAdd = bindActionCreators(addAction, store.dispatch);
