@@ -12,11 +12,11 @@ const INPUT_STRING = "witam";
 
 const PureRedux = () => {
   const [composeString, setComposeString] = useState("Witam");
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(store.getState().reducer.value);
 
   useEffect(() => {
     const unsubscribe = store.subscribe(() => {
-      console.log(store.getState());
+      console.log(store.getState().reducer.value);
       // setCounter(store.getState().value);
       setCounter(store.getState().reducer.value);
     });
@@ -50,12 +50,18 @@ const PureRedux = () => {
   };
 
   const increaseCounterHandler = () => {
-    store.dispatch({
-      type: "INCREASE",
-      payload: {
-        step: 2,
-      },
-    });
+    // store.dispatch({
+    //   type: "INCREASE",
+    //   payload: {
+    //     step: 2,
+    //   },
+    // });
+
+    // manual
+    // store.dispatch(createAddAction(3));
+
+    // using bindActionCreators
+    dispatchAdd(4);
   };
 
   return (
@@ -101,7 +107,7 @@ function reducer(state = { value: 1 }, action) {
     };
   }
 
-  console.log("Action Triggered", action);
+  // console.log("Action Triggered", action);
   return state;
 }
 
@@ -117,3 +123,15 @@ const store = createStore(
     anotherReducer: anotherReducer,
   })
 );
+
+// bindActionCreators
+const createAddAction = (step) => {
+  return {
+    type: "INCREASE",
+    payload: {
+      step: step,
+    },
+  };
+};
+
+const dispatchAdd = bindActionCreators(createAddAction, store.dispatch);
