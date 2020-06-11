@@ -16,7 +16,9 @@ const PureRedux = () => {
 
   useEffect(() => {
     const unsubscribe = store.subscribe(() => {
-      setCounter(store.getState().value);
+      console.log(store.getState());
+      // setCounter(store.getState().value);
+      setCounter(store.getState().reducer.value);
     });
 
     return () => {
@@ -103,4 +105,15 @@ function reducer(state = { value: 1 }, action) {
   return state;
 }
 
-const store = createStore(reducer);
+//combineReducers
+function anotherReducer(state = { fruits: [] }, action) {
+  return state;
+}
+
+// const store = createStore(reducer);
+const store = createStore(
+  combineReducers({
+    reducer: reducer,
+    anotherReducer: anotherReducer,
+  })
+);
