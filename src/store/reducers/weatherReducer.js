@@ -22,7 +22,8 @@ function weatherReducer(state = INITIAL_STATE, action) {
     case WEATHER_API_RECEIVED: {
       return {
         ...state,
-        error: action.payload,
+        weather: action.payload,
+        error: undefined,
         loading: false,
       };
     }

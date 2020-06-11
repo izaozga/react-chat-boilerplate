@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route, useRouteMatch, NavLink } from "react-router-dom";
 import PureRedux from "./pages/PureRedux";
 import ReduxWithReact from "./pages/ReduxWithReact";
+import ReduxWeather from "./pages/ReduxWeather";
 
 const ReduxExamplePage = () => {
   const match = useRouteMatch();
@@ -19,6 +20,9 @@ const ReduxExamplePage = () => {
           <Route path={`${match.path}/react-redux`}>
             <ReduxWithReact />
           </Route>
+          <Route path={`${match.path}/redux-thunk`}>
+            <ReduxWeather />
+          </Route>
         </Switch>
       </div>
       <div className="BottomNavbar">
@@ -28,6 +32,9 @@ const ReduxExamplePage = () => {
           </li>
           <li>
             <NavLink to={`${match.path}/react-redux`}>Redux with React</NavLink>
+          </li>
+          <li>
+            <NavLink to={`${match.path}/redux-thunk`}>Redux Thunk</NavLink>
           </li>
         </ul>
       </div>

@@ -16,7 +16,7 @@ export function getCurrentWeather(cityName) {
       (response) => {
         dispatch({
           type: WEATHER_API_RECEIVED,
-          payload: response,
+          payload: response.data,
         });
       },
       (error) => {
