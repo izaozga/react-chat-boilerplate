@@ -111,17 +111,27 @@ function reducer(state = { value: 1 }, action) {
   return state;
 }
 
-//combineReducers
+// combineReducers
 function anotherReducer(state = { fruits: [] }, action) {
   return state;
 }
+
+// applyMiddleware
+const logger = ({ getState }) => {
+  return (next) => (action) => {
+    console.log("MIDDLEWARE", getState(), action);
+    const value = next(action);
+    return value;
+  };
+};
 
 // const store = createStore(reducer);
 const store = createStore(
   combineReducers({
     reducer: reducer,
     anotherReducer: anotherReducer,
-  })
+  }),
+  applyMiddleware(logger)
 );
 
 // bindActionCreators
