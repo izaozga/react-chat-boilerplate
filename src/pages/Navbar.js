@@ -31,6 +31,9 @@ class Navbar extends React.Component {
           <li>
             <NavLink to="/dom-ref">DOM ref</NavLink>
           </li>
+          <li>
+            <NavLink to="/redux">Redux</NavLink>
+          </li>
           <li style={{ float: "right" }}>
             <button onClick={this.context.changeLanguage}>
               Switch Language

@@ -16,6 +16,7 @@ import ErrorCss from "./pages/ErrorCss";
 import HooksInterval from "./pages/HooksInterval";
 import Weather from "./pages/Weather";
 import DomRef from "./pages/DomRef";
+import ReduxExamplePage from "./pages/redux-example";
 
 import "./App.css";
 
@@ -69,6 +70,9 @@ class App extends React.Component {
                 </Route>
                 <Route path="/dom-ref">
                   <DomRef />
+                </Route>
+                <Route path="/redux">
+                  <ReduxExamplePage />
                 </Route>
                 <Route path="*">
                   <Page404 />
