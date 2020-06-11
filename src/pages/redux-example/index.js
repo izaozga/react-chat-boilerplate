@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route, useRouteMatch, NavLink } from "react-router-dom";
 import PureRedux from "./pages/PureRedux";
+import ReduxWithReact from "./pages/ReduxWithReact";
 
 const ReduxExamplePage = () => {
   const match = useRouteMatch();
@@ -16,7 +17,7 @@ const ReduxExamplePage = () => {
             <PureRedux />
           </Route>
           <Route path={`${match.path}/react-redux`}>
-            <div>React Redux</div>
+            <ReduxWithReact />
           </Route>
         </Switch>
       </div>
