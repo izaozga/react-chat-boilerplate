@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   createStore,
   combineReducers,
@@ -12,6 +12,17 @@ const INPUT_STRING = "witam";
 
 const PureRedux = () => {
   const [composeString, setComposeString] = useState("Witam");
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    const unsubscribe = store.subscribe(() => {
+      setCounter(store.getState().value);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   const composeHandler = () => {
     // const composed = INPUT_STRING;
@@ -36,6 +47,15 @@ const PureRedux = () => {
     });
   };
 
+  const increaseCounterHandler = () => {
+    store.dispatch({
+      type: "INCREASE",
+      payload: {
+        step: 2,
+      },
+    });
+  };
+
   return (
     <div>
       <div className={styles.Section}>
@@ -48,7 +68,8 @@ const PureRedux = () => {
         <h2 className={styles.SectionHeader}>STORE AND REDUCER</h2>
         <button onClick={storeHandler}>Print store</button>
         <button onClick={sampleDispatchHandler}>Dispatch Sample</button>
-        <h3>{composeString}</h3>
+        <button onClick={increaseCounterHandler}>Increase</button>
+        <h3>{counter}</h3>
       </div>
     </div>
   );
@@ -71,6 +92,13 @@ function addDot(value) {
 
 // store and reducer
 function reducer(state = { value: 1 }, action) {
+  if (action.type === "INCREASE") {
+    return {
+      ...state,
+      value: state.value + action.payload.step,
+    };
+  }
+
   console.log("Action Triggered", action);
   return state;
 }
