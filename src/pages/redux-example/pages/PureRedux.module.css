@@ -1,11 +1,11 @@
-.ComposeSection {
+.Section {
   position: relative;
   border: 1px solid black;
   padding: 5px;
   margin: 10px 2px;
 }
 
-.ComposeSectionHeader {
+.SectionHeader {
   margin: 0;
   top: 5px;
   left: 5px;

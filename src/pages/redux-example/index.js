@@ -20,7 +20,7 @@ const ReduxExamplePage = () => {
           </Route>
         </Switch>
       </div>
-      <div class="BottomNavbar">
+      <div className="BottomNavbar">
         <ul>
           <li>
             <NavLink to={`${match.path}/pure-redux`}>Pure Redux</NavLink>
