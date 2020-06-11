@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../LanguageContext";
+import { connect } from "react-redux";
 
 class Profile extends React.Component {
   render() {
@@ -9,6 +10,7 @@ class Profile extends React.Component {
       <div>
         <h1>Profile</h1>
         <Link to="chat-container">{routeName}</Link>
+        <h2>Redux username: {this.props.username}</h2>
       </div>
     );
   }
@@ -16,4 +18,8 @@ class Profile extends React.Component {
 
 Profile.contextType = LanguageContext;
 
-export default Profile;
+const mapStateToProps = (state) => ({
+  username: state.globalReducer.username,
+});
+
+export default connect(mapStateToProps)(Profile);
